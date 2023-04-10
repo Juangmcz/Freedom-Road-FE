@@ -10,13 +10,13 @@ import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomepageComponent } from './pages/homepage/homepage.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from './modules/material.module';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -24,10 +24,11 @@ import { MaterialModule } from './modules/material.module';
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    HomepageComponent,
+    HomePageComponent,
     ShoppingCartComponent,
     AboutUsComponent,
     NotFoundComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,

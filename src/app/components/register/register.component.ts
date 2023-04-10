@@ -13,8 +13,8 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  formReg: FormGroup;
-  formRegPersonalInfo: FormGroup;
+  RegisterForm: FormGroup;
+  RegisterPersonalInfoForm: FormGroup;
   customer: Customer | undefined;
 
   constructor(
@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
     private userService: UserService,
     private customerService: CustomerService
   ) {
-    this.formReg = new FormGroup({
+    this.RegisterForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
         Validators.required,
@@ -30,7 +30,7 @@ export class RegisterComponent implements OnInit {
       ]),
     });
 
-    this.formRegPersonalInfo = new FormGroup({
+    this.RegisterPersonalInfoForm = new FormGroup({
       dni: new FormControl('', [
         Validators.required,
         Validators.pattern('^[0-9]+$'),
@@ -56,7 +56,7 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
     this.userService
-      .register(this.formReg.value)
+      .register(this.RegisterForm.value)
       .then((response) => {
         this.customerPost(response);
         this.router.navigate(['/login']);
@@ -65,12 +65,12 @@ export class RegisterComponent implements OnInit {
   }
 
   isFormsInvalid() {
-    return this.formReg.invalid || this.formRegPersonalInfo.invalid;
+    return this.RegisterForm.invalid || this.RegisterPersonalInfoForm.invalid;
   }
 
   userInitialization(): Customer {
-    var userLoginInfo = this.formReg.value;
-    var userPersonalInfo = this.formRegPersonalInfo.value;
+    var userLoginInfo = this.RegisterForm.value;
+    var userPersonalInfo = this.RegisterPersonalInfoForm.value;
 
     this.customer = {
       dni: userPersonalInfo.dni,

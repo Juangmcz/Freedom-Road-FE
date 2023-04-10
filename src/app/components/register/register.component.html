@@ -1,5 +1,5 @@
 <div ngClass="form-container">
-  <form [formGroup]="formRegPersonalInfo" ngClass="register">
+  <form [formGroup]="RegisterPersonalInfoForm" ngClass="register">
     <mat-form-field appearance="fill">
       <mat-label>DNI: </mat-label>
       <input
@@ -11,8 +11,8 @@
       />
       <div
         *ngIf="
-          formReg.get('dni')?.hasError('required') &&
-          !formReg.get('dni')?.pristine
+          RegisterForm.get('dni')?.hasError('required') &&
+          !RegisterForm.get('dni')?.pristine
         "
       >
         BNI number is required
@@ -29,8 +29,8 @@
       />
       <div
         *ngIf="
-          formReg.get('name')?.hasError('required') &&
-          !formReg.get('name')?.pristine
+          RegisterForm.get('name')?.hasError('required') &&
+          !RegisterForm.get('name')?.pristine
         "
       >
         Name is required
@@ -47,8 +47,8 @@
       />
       <div
         *ngIf="
-          formReg.get('lastName')?.hasError('required') &&
-          !formReg.get('lastName')?.pristine
+          RegisterForm.get('lastName')?.hasError('required') &&
+          !RegisterForm.get('lastName')?.pristine
         "
       >
         Last Name is required
@@ -65,8 +65,8 @@
       />
       <div
         *ngIf="
-          formReg.get('cell')?.hasError('required') &&
-          !formReg.get('cell')?.pristine
+          RegisterForm.get('cell')?.hasError('required') &&
+          !RegisterForm.get('cell')?.pristine
         "
       >
         Cellphone number is required
@@ -76,7 +76,7 @@
 </div>
 
 <div ngClass="form-container">
-  <form [formGroup]="formReg" ngClass="register">
+  <form [formGroup]="RegisterForm" ngClass="register">
     <mat-form-field appearance="fill">
       <mat-label>Email: </mat-label>
       <input
@@ -88,8 +88,8 @@
       />
       <div
         *ngIf="
-          formReg.get('email')?.hasError('required') &&
-          !formReg.get('email')?.pristine
+          RegisterForm.get('email')?.hasError('required') &&
+          !RegisterForm.get('email')?.pristine
         "
       >
         Email is required
@@ -106,8 +106,8 @@
       />
       <div
         *ngIf="
-          formReg.get('password')?.hasError('required') &&
-          !formReg.get('password')?.pristine
+          RegisterForm.get('password')?.hasError('required') &&
+          !RegisterForm.get('password')?.pristine
         "
       >
         Password is required
@@ -117,7 +117,6 @@
       mat-raised-button
       color="primary"
       style="margin: 5px"
-      [disabled]="isFormsInvalid()"
       (click)="onSubmit()"
     >
       Register

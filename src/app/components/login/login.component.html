@@ -1,0 +1,65 @@
+<div ngClass="form-container">
+  <form [formGroup]="loginForm" ngClass="login">
+    <mat-form-field appearance="fill">
+      <mat-label>Email: </mat-label>
+      <input
+        matInput
+        type="email"
+        placeholder="Insert email"
+        formControlName="email"
+        required
+      />
+      <div
+        *ngIf="
+          loginForm.get('email')?.hasError('required') &&
+          !loginForm.get('email')?.pristine
+        "
+      >
+        Email is required
+      </div>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Password: </mat-label>
+      <input
+        matInput
+        type="password"
+        placeholder="Insert password"
+        formControlName="password"
+        required
+      />
+      <div
+        *ngIf="
+          loginForm.get('password')?.hasError('required') &&
+          !loginForm.get('password')?.pristine
+        "
+      >
+        Password is required
+      </div>
+    </mat-form-field>
+    <button
+      mat-raised-button
+      color="primary"
+      style="margin: 5px"
+      [disabled]="loginForm.invalid"
+      (click)="onSubmit()"
+    >
+      Login
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      style="margin: 5px"
+      (click)="onClick()"
+    >
+      Login With Google
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      style="margin: 5px"
+      routerLink="/main"
+    >
+      Go back
+    </button>
+  </form>
+</div>

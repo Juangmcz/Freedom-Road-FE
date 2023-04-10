@@ -4,6 +4,7 @@ import { LoginComponent } from './components/login/login.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RegisterComponent } from './components/register/register.component';
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 const routes: Routes = [
   { path: '', redirectTo: '/main', pathMatch: 'full' },
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  {
+    path: '**',
+    component: NotFoundComponent,
+  },
 ];
 
 @NgModule({

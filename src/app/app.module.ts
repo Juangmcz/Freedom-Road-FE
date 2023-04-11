@@ -17,6 +17,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { MaterialModule } from './modules/material.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { BusTicketComponent } from './components/bus-tickets/bus-ticket/bus-ticket.component';
+import { BusTicketListComponent } from './components/bus-tickets/bus-ticket-list/bus-ticket-list.component';
+import { BusTicketListContainerComponent } from './components/bus-tickets/bus-ticket-list-container/bus-ticket-list-container.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,10 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     AboutUsComponent,
     NotFoundComponent,
     HomePageComponent,
+    BusTicketComponent,
+    BusTicketListComponent,
+    BusTicketListContainerComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +49,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     BrowserAnimationsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

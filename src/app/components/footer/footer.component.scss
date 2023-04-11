@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.foot {
+  background-color: rgb(41, 41, 41);
+}
+
+img {
+  width: 40px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo span {
+  color: white;
+}
+
+span {
+  font-size: 23px;
+  height: 40px;
+}
+.fb {
+  background: #4267b2;
+  padding: 8px;
+  border-radius: 50px;
+  color: white;
+}
+.tw {
+  background-color: #1da1f2;
+  padding: 8px;
+  border-radius: 50px;
+  color: white;
+}
+.in {
+  background-color: #c13584;
+  padding: 8px;
+  border-radius: 50px;
+  color: white;
+}
+.li {
+  background-color: #0e76a8;
+  padding: 8px;
+  border-radius: 50px;
+  color: white;
+}
+.yt {
+  background-color: #ff0000;
+  padding: 8px;
+  border-radius: 50px;
+  color: white;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+.section {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 40px;
+}
+.section div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+div h2 {
+  color: white;
+  padding: 10px 0;
+}
+a {
+  color: white;
+  text-decoration: none;
+  padding: 5px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+input {
+  background: none;
+  border: solid 2px white;
+  padding: 10px 20px;
+}
+button {
+  padding: 10px 20px;
+  background: white;
+  color: rgb(41, 41, 41);
+  font-size: 18px;
+}
+.copyright {
+  display: flex;
+  font-size: 13px;
+  justify-content: space-between;
+  padding: 20px;
+  color: white;
+  background: rgb(22, 22, 22);
+}

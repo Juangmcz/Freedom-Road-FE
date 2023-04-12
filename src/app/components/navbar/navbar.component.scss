@@ -1,0 +1,28 @@
+.left-spacer {
+  flex: 1 1 auto;
+}
+.right-spacer {
+  flex: 1 1 auto;
+}
+.center-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+
+  a {
+    color: white;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 20px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

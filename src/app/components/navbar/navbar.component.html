@@ -1,1 +1,46 @@
-<p>navbar works!</p>
+<mat-toolbar>
+  <button
+    routerLink="/"
+    mat-icon-button
+    class="home-logo"
+    aria-label="Icon-button with home icon"
+  >
+    <mat-icon>home</mat-icon>
+  </button>
+  <span class="left-spacer"></span>
+  <div class="center-options">
+    <a mat-tab-link routerLink="/bus-tickets">Buy a Ticket</a>
+    <a mat-tab-link routerLink="/destinations">Our Destinations</a>
+    <a mat-tab-link routerLink="/about-us">About Us</a>
+  </div>
+  <span class="right-spacer"></span>
+
+  <button
+    *ngIf="isLoggedIn(); else notLoggedIn"
+    mat-raised-icon-button
+    color="warn"
+    routerLink="/login"
+    (click)="logout()"
+    aria-label="Icon-button with logout icon"
+  >
+    <mat-icon>logout</mat-icon>
+  </button>
+
+  <ng-template #notLoggedIn>
+    <button
+      mat-raised-icon-button
+      routerLink="/login"
+      aria-label="Icon-button with login icon"
+    >
+      <mat-icon>login</mat-icon>
+    </button>
+  </ng-template>
+
+  <button
+    mat-icon-button
+    routerLink="/shopping-cart"
+    aria-label="Icon-button with shopping cart icon"
+  >
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
+</mat-toolbar>

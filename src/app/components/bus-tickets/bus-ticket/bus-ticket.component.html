@@ -1,0 +1,25 @@
+<div ngClass="bus-ticket">
+  <img src="{{ busTicket.imageUrl }}" alt="{{ busTicket.imageUrl }}" />
+  <div ngClass="bus-ticket-description">
+    <span class="origin-text">
+      <h2>{{ busTicket.origin }}</h2>
+    </span>
+    <span class="connector-text">
+      <h4>Towards</h4>
+      <mat-icon>double_arrow</mat-icon>
+    </span>
+    <span class="destination-text">
+      <h2>{{ busTicket.destination }}</h2>
+    </span>
+    <div ngClass="bus-ticket-purchase">
+      <span class="price-text">
+        <p>$ {{ busTicket.price }} COP</p>
+      </span>
+      <hr />
+      <button ngClass="add-to-cart-button" mat-raised-button color="primary">
+        <mat-icon>add_shopping_cart</mat-icon>
+        Buy Ticket
+      </button>
+    </div>
+  </div>
+</div>

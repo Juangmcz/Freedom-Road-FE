@@ -12,7 +12,11 @@ import {
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private auth: Auth) {}
+  private uid: string | undefined;
+
+  constructor(private auth: Auth) {
+    this.uid = this.auth.currentUser?.uid;
+  }
 
   register({ email, password }: any) {
     return createUserWithEmailAndPassword(this.auth, email, password);
@@ -28,5 +32,13 @@ export class UserService {
 
   logout() {
     return signOut(this.auth);
+  }
+
+  getState() {
+    this.uid = this.auth.currentUser?.uid;
+    if (this.uid) {
+      return true;
+    }
+    return false;
   }
 }

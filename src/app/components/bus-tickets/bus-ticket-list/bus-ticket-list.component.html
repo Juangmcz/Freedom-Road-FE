@@ -1,0 +1,6 @@
+<div ngClass="bus-tickets-list" *ngIf="total > 0">
+  <app-bus-ticket
+    *ngFor="let busTicket of busTickets"
+    [busTicket]="busTicket"
+  ></app-bus-ticket>
+</div>

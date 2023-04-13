@@ -5,15 +5,35 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
 import { RegisterComponent } from './components/forms/register/register.component';
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
+import { AboutUsComponent } from './pages/about-us/about-us.component';
+import { TicketsPageComponent } from './pages/tickets-page/tickets-page.component';
+import { DestinationsComponent } from './pages/destinations/destinations.component';
 const routes: Routes = [
-  { path: '', redirectTo: '/main', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: 'main',
+    path: 'home',
     component: HomePageComponent,
     ...canActivate(() => redirectUnauthorizedTo(['/register'])),
   },
+  {
+    path: 'bus-tickets',
+    component: TicketsPageComponent,
+  },
+  {
+    path: 'destinations',
+    component: DestinationsComponent,
+  },
+  {
+    path: 'about-us',
+    component: AboutUsComponent,
+  },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  {
+    path: 'shopping-cart',
+    component: ShoppingCartComponent,
+  },
   {
     path: '**',
     component: NotFoundComponent,

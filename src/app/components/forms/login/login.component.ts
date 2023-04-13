@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
       .login(this.loginForm.value)
       .then((response) => {
         console.log(response);
-        this.router.navigate(['/main']);
+        this.router.navigate(['/home']);
       })
       .catch((error) => {
         console.log(error);
@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
       .loginWithGoogle()
       .then((response) => {
         console.log(response);
-        this.router.navigate(['/main']);
+        this.router.navigate(['/home']);
       })
       .catch((error) => console.log(error));
   }

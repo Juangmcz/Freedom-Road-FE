@@ -25,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TicketsPageComponent } from './pages/tickets-page/tickets-page.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { DestinationsComponent } from './pages/destinations/destinations.component';
+import { OurTeamComponent } from './components/our-team/our-team.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { DestinationsComponent } from './pages/destinations/destinations.compone
     TicketsPageComponent,
     CarouselComponent,
     DestinationsComponent,
+    OurTeamComponent,
   ],
   imports: [
     BrowserModule,

@@ -3,6 +3,6 @@ export interface BusTicket {
   origin: string;
   destination: string;
   imageUrl?: string;
-  price?: number;
+  price: number;
   numberOfTickets?: number;
 }

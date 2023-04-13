@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user-service/user.service';
+import { CustomerService } from 'src/app/services/customer-service/customer.service';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +12,13 @@ import { UserService } from 'src/app/services/user-service/user.service';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
+  faGoogle = faGoogle;
 
-  constructor(private router: Router, private userService: UserService) {
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private customerService: CustomerService
+  ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [
@@ -42,5 +49,15 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/home']);
       })
       .catch((error) => console.log(error));
+  }
+
+  fetchUserData(): void {
+    this.customerService
+      .getByEmail(this.loginForm.value.email)
+      .subscribe((user) => {
+        console.log(user);
+        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('items', JSON.stringify([]));
+      });
   }
 }

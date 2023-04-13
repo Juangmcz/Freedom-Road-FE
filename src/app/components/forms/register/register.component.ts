@@ -86,7 +86,7 @@ export class RegisterComponent implements OnInit {
     this.customerService.save(this.userInitialization()).subscribe((answer) => {
       console.log(answer);
       Swal.fire({
-        position: 'top-end',
+        position: 'center',
         icon: 'success',
         title: `Customer with ID:${answer.id} and email:${response.user.email} has been created successfully`,
         showConfirmButton: true,

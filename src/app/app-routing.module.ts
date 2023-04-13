@@ -15,7 +15,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomePageComponent,
-    ...canActivate(() => redirectUnauthorizedTo(['/register'])),
   },
   {
     path: 'bus-tickets',
@@ -34,6 +33,7 @@ const routes: Routes = [
   {
     path: 'shopping-cart',
     component: ShoppingCartComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login'])),
   },
   {
     path: '**',

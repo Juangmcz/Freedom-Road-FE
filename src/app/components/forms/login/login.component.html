@@ -51,7 +51,8 @@
       style="margin: 5px"
       (click)="onClick()"
     >
-      Login With Google
+      <fa-icon [icon]="faGoogle"></fa-icon>
+      Continue With Google
     </button>
     <button
       mat-raised-button
@@ -61,5 +62,16 @@
     >
       Go back
     </button>
+    <br>
+    <h3>Doesn't have an account?</h3>
+    <button
+    mat-raised-button
+    color="warn"
+    style="margin: 5px"
+    routerLink="/register"
+  >
+    Sign Up
+  </button>
+  <br>
   </form>
 </div>

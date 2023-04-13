@@ -10,11 +10,17 @@
   <span class="left-spacer"></span>
   <div class="center-options">
     <a mat-tab-link routerLink="/bus-tickets">Buy a Ticket</a>
-    <a mat-tab-link routerLink="/destinations">Our Destinations</a>
+    <a mat-tab-link routerLink="/destinations">Explore Destinations</a>
     <a mat-tab-link routerLink="/about-us">About Us</a>
   </div>
   <span class="right-spacer"></span>
-
+  <button
+    mat-icon-button
+    routerLink="/shopping-cart"
+    aria-label="Icon-button with shopping cart icon"
+  >
+    <mat-icon>shopping_cart</mat-icon>
+  </button>
   <button
     *ngIf="isLoggedIn(); else notLoggedIn"
     mat-raised-icon-button
@@ -25,7 +31,6 @@
   >
     <mat-icon>logout</mat-icon>
   </button>
-
   <ng-template #notLoggedIn>
     <button
       mat-raised-icon-button
@@ -35,12 +40,4 @@
       <mat-icon>login</mat-icon>
     </button>
   </ng-template>
-
-  <button
-    mat-icon-button
-    routerLink="/shopping-cart"
-    aria-label="Icon-button with shopping cart icon"
-  >
-    <mat-icon>shopping_cart</mat-icon>
-  </button>
 </mat-toolbar>

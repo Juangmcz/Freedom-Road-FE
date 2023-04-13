@@ -16,7 +16,7 @@
         <p>$ {{ busTicket.price }} COP</p>
       </span>
       <hr />
-      <button ngClass="add-to-cart-button" mat-raised-button color="primary">
+      <button ngClass="add-to-cart-button" mat-raised-button color="primary" (click)="addToCart()">
         <mat-icon>add_shopping_cart</mat-icon>
         Buy Ticket
       </button>

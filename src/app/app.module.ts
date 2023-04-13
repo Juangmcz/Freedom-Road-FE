@@ -24,8 +24,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TicketsPageComponent } from './pages/tickets-page/tickets-page.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
-import { DestinationsComponent } from './pages/destinations/destinations.component';
-import { OurTeamComponent } from './components/our-team/our-team.component';
+import { OurTeamComponent } from './pages/our-team/our-team.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +43,6 @@ import { OurTeamComponent } from './components/our-team/our-team.component';
     FooterComponent,
     TicketsPageComponent,
     CarouselComponent,
-    DestinationsComponent,
     OurTeamComponent,
   ],
   imports: [

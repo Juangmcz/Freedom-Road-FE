@@ -8,7 +8,8 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { ShoppingCartComponent } from './pages/shopping-cart/shopping-cart.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { TicketsPageComponent } from './pages/tickets-page/tickets-page.component';
-import { DestinationsComponent } from './pages/destinations/destinations.component';
+import { OurTeamComponent } from './pages/our-team/our-team.component';
+
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
@@ -21,8 +22,8 @@ const routes: Routes = [
     component: TicketsPageComponent,
   },
   {
-    path: 'destinations',
-    component: DestinationsComponent,
+    path: 'our-team',
+    component: OurTeamComponent,
   },
   {
     path: 'about-us',

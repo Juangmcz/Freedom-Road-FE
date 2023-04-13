@@ -22,6 +22,9 @@ import { BusTicketListComponent } from './components/bus-tickets/bus-ticket-list
 import { BusTicketListContainerComponent } from './components/bus-tickets/bus-ticket-list-container/bus-ticket-list-container.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TicketsPageComponent } from './pages/tickets-page/tickets-page.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { DestinationsComponent } from './pages/destinations/destinations.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     BusTicketListComponent,
     BusTicketListContainerComponent,
     FooterComponent,
+    TicketsPageComponent,
+    CarouselComponent,
+    DestinationsComponent,
   ],
   imports: [
     BrowserModule,

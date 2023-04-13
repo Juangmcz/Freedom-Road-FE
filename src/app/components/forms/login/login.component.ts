@@ -20,8 +20,8 @@ export class LoginComponent implements OnInit {
     private customerService: CustomerService
   ) {
     this.loginForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      password: new FormControl(null, [
         Validators.pattern('^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{6,}$'),
       ]),
     });
@@ -29,10 +29,11 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {}
 
-  onSubmit() {
+  onSubmit(): void {
     this.userService
       .login(this.loginForm.value)
       .then((response) => {
+        this.fetchUserData();
         console.log(response);
         this.router.navigate(['/home']);
       })
@@ -41,7 +42,7 @@ export class LoginComponent implements OnInit {
       });
   }
 
-  onClick() {
+  onClick(): void {
     this.userService
       .loginWithGoogle()
       .then((response) => {

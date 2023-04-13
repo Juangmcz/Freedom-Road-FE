@@ -1,4 +1,5 @@
 <div ngClass="form-container">
+  <h1>Create your account</h1>
   <form [formGroup]="RegisterPersonalInfoForm" ngClass="register">
     <mat-form-field appearance="fill">
       <mat-label>DNI: </mat-label>
@@ -119,16 +120,22 @@
       style="margin: 5px"
       (click)="onSubmit()"
     >
-      Submit
+      Continue
     </button>
+    <div class="have-account-text">
+      <h3>Already have an account?</h3>
+      <a href="/login">Login</a>
+    </div>
+    <h3>OR</h3>
     <button
       mat-raised-button
       color="warn"
       style="margin: 5px"
-      routerLink="/home"
+      (click)="onClick()"
     >
-      Go back
+      <fa-icon [icon]="faGoogle"></fa-icon>
+      Continue With Google
     </button>
-    <br>
   </form>
+  <p>Terms of use | Privacy policy</p>
 </div>

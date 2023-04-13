@@ -1,4 +1,5 @@
 <div ngClass="form-container">
+  <h1>Welcome back</h1>
   <form [formGroup]="loginForm" ngClass="login">
     <mat-form-field appearance="fill">
       <mat-label>Email: </mat-label>
@@ -40,11 +41,16 @@
       mat-raised-button
       color="primary"
       style="margin: 5px"
-      [disabled]="loginForm.invalid"
       (click)="onSubmit()"
     >
-      Login
+      Continue
     </button>
+    <br />
+    <div class="no-account-text">
+      <h3>Don't have an account?</h3>
+      <a href="/register">Sign up</a>
+    </div>
+    <h3>OR</h3>
     <button
       mat-raised-button
       color="warn"
@@ -54,24 +60,6 @@
       <fa-icon [icon]="faGoogle"></fa-icon>
       Continue With Google
     </button>
-    <button
-      mat-raised-button
-      color="warn"
-      style="margin: 5px"
-      routerLink="/home"
-    >
-      Go back
-    </button>
-    <br>
-    <h3>Doesn't have an account?</h3>
-    <button
-    mat-raised-button
-    color="warn"
-    style="margin: 5px"
-    routerLink="/register"
-  >
-    Sign Up
-  </button>
-  <br>
   </form>
+  <p>Terms of use | Privacy policy</p>
 </div>

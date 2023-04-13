@@ -25,7 +25,7 @@ export class BusTicketComponent {
     let tickets: any[] = JSON.parse(localStorage.getItem('items') || '[]');
 
     if (!this.userService.getState()) {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/authentication']);
     }
 
     if (

@@ -25,7 +25,7 @@
     *ngIf="isLoggedIn(); else notLoggedIn"
     mat-raised-icon-button
     color="warn"
-    routerLink="/login"
+    routerLink="/authentication"
     (click)="logout()"
     aria-label="Icon-button with logout icon"
   >
@@ -34,7 +34,7 @@
   <ng-template #notLoggedIn>
     <button
       mat-raised-icon-button
-      routerLink="/login"
+      routerLink="/authentication"
       aria-label="Icon-button with login icon"
     >
       <mat-icon>login</mat-icon>

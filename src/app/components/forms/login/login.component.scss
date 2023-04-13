@@ -3,14 +3,42 @@
   flex-direction: column;
   align-items: center;
 }
-
+.form-container h1 {
+  color: black;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
 .login {
-  margin-top: 3%;
+  margin-top: 1rem;
   display: flex;
   flex-direction: column;
   width: 280px;
 }
 
-h3 {
+.form-container h3 {
   text-align: center;
+  font-size: 0.8rem;
+}
+
+.form-container p {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.7rem;
+}
+
+.no-account-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-account-text h3 {
+  margin-right: 10px;
+}
+
+.no-account-text a {
+  margin-right: 10px;
+  margin-bottom: 15px;
 }

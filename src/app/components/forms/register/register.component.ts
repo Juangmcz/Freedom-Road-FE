@@ -5,6 +5,7 @@ import { Customer } from 'src/app/models/customer.model';
 import { Router } from '@angular/router';
 import { CustomerService } from 'src/app/services/customer-service/customer.service';
 import { UserService } from 'src/app/services/user-service/user.service';
+import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -13,6 +14,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
+  faGoogle = faGoogle;
   RegisterForm: FormGroup;
   RegisterPersonalInfoForm: FormGroup;
   customer: Customer | undefined;
@@ -50,8 +52,16 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-    throw new Error('Method not implemented.');
+  ngOnInit(): void {}
+
+  onClick(): void {
+    this.userService
+      .loginWithGoogle()
+      .then((response) => {
+        console.log(response);
+        this.router.navigate(['/home']);
+      })
+      .catch((error) => console.log(error));
   }
 
   onSubmit() {
@@ -59,7 +69,6 @@ export class RegisterComponent implements OnInit {
       .register(this.RegisterForm.value)
       .then((response) => {
         this.customerPost(response);
-        this.router.navigate(['/login']);
       })
       .catch((error) => console.log(error));
   }
@@ -88,7 +97,7 @@ export class RegisterComponent implements OnInit {
       Swal.fire({
         position: 'center',
         icon: 'success',
-        title: `Customer with ID:${answer.id} and email:${response.user.email} has been created successfully`,
+        title: `Customer with email:${response.user.email} has been created successfully`,
         showConfirmButton: true,
       });
     });

@@ -14,7 +14,6 @@ export class NavbarComponent {
   constructor(private userService: UserService, private router: Router) {}
 
   isLoggedIn(): boolean {
-    console.log('the state is:' + this.userService.getState());
     return this.userService.getState();
   }
 
@@ -22,7 +21,7 @@ export class NavbarComponent {
     this.userService
       .logout()
       .then(() => {
-        this.router.navigate(['/login']);
+        this.router.navigate(['/authentication']);
       })
       .catch((error) => console.log(error));
   }

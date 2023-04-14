@@ -21,7 +21,6 @@ export class AccountCardComponent implements OnInit {
   constructor(private service: CustomerService) {}
 
   ngOnInit(): void {
-    console.log(JSON.parse(localStorage.getItem('user') || '{}').id);
     this.service
       .getById(JSON.parse(localStorage.getItem('user') || '{}').id)
       .subscribe({
@@ -32,6 +31,4 @@ export class AccountCardComponent implements OnInit {
         complete: console.log,
       });
   }
-
-  updateCellPhone() {}
 }

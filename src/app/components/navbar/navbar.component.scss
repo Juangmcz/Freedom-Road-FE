@@ -26,3 +26,20 @@
     }
   }
 }
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo span {
+  color: white;
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: 600;
+ 
+ color: white;
+}

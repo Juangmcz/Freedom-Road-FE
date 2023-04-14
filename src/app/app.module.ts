@@ -29,6 +29,7 @@ import { AuthenticationComponent } from './pages/authentication/authentication.c
 import { OrdersComponent } from './pages/orders/orders.component';
 import { AccountComponent } from './pages/account/account.component';
 import { OrderCardComponent } from './components/order-card/order-card.component';
+import { AccountCardComponent } from './components/account-card/account-card.component';
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { OrderCardComponent } from './components/order-card/order-card.component
     OrdersComponent,
     AccountComponent,
     OrderCardComponent,
+    AccountCardComponent,
   ],
   imports: [
     BrowserModule,

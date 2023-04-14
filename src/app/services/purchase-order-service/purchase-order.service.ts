@@ -6,7 +6,7 @@ import { PurchaseOrder } from 'src/app/models/purchase-order.model';
 @Injectable({
   providedIn: 'root',
 })
-export class PurchaseOrderServiceService {
+export class PurchaseOrderService {
   constructor(private http: HttpClient) {}
 
   api: string = 'http://localhost:8080/api/purchaseorders';

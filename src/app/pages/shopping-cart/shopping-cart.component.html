@@ -1,1 +1,58 @@
-<p>shopping-cart works!</p>
+<div class="shopping-cart-container">
+  <div class="cart-items-container">
+    <div class="cart-item" *ngFor="let item of uniqueItems">
+      <div class="cart-item-image">
+        <img [src]="item.imageUrl" alt="{{ item.origin }}" />
+      </div>
+      <div class="cart-item-details">
+        <div class="cart-item-name">
+          From {{ item.origin }} To {{ item.destination }}
+        </div>
+        <div class="cart-item-price">{{ item.price | currency }}</div>
+        <div class="cart-item-quantity">
+          <button mat-icon-button (click)="decreaseQuantity(item)">
+            <mat-icon>remove</mat-icon>
+          </button>
+          <div>{{ itemsQuantity.get(item.origin) }}</div>
+          <button mat-icon-button (click)="increaseQuantity(item)">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+        <div class="cart-item-remove">
+          <button mat-icon-button (click)="removeFromCart(item)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div ngClass="order-settings">
+      <button mat-raised-button style="margin: 5px" (click)="placeOrder()">
+        Confirm Order
+      </button>
+    </div>
+  </div>
+
+  <div class="cart-summary-container">
+    <h2>Add travel insurance</h2>
+    <mat-slide-toggle
+      class="shipping-slider"
+      checked="false"
+      (click)="enableTravelInsurance()"
+    >
+    </mat-slide-toggle>
+    <div class="cart-summary">
+      <div class="cart-summary-row">
+        <h2>Subtotal:</h2>
+        <div class="cart-summary-value">{{ subtotal | currency }}</div>
+      </div>
+      <div class="cart-summary-row">
+        <h2>Insurance:</h2>
+        <div class="cart-summary-value">{{ insuranceCost | currency }}</div>
+      </div>
+      <div class="cart-summary-row">
+        <h2>Total:</h2>
+        <div class="cart-summary-value">{{ total | currency }}</div>
+      </div>
+    </div>
+  </div>
+</div>

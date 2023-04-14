@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { BusTicket } from 'src/app/models/bus-ticket.model';
 import { UserService } from 'src/app/services/user-service/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-bus-ticket',
@@ -34,6 +35,7 @@ export class BusTicketComponent {
           .length > 0
       )
     ) {
+      Swal.fire({ title: 'Adding item to cart', timer: 1000 });
       tickets?.push(this.busTicket);
       localStorage.setItem('items', JSON.stringify(tickets));
     }

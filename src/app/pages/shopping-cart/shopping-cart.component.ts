@@ -167,7 +167,7 @@ export class ShoppingCartComponent {
     this.calculateTotal();
     let newOrder: PurchaseOrder = {
       userId: JSON.parse(localStorage.getItem('user') || '{}').id,
-      status: 'Completed',
+      status: 'RECEIVED',
       total: this.total,
       purchaseDate: new Date(),
       numberOfPassengers: this.items.length,

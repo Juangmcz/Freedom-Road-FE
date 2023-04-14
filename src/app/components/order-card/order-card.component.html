@@ -1,0 +1,33 @@
+<div ngClass="order-card-container">
+  <div ngClass="order-card-description">
+    <span class="order-id-text">
+      <h2>order ID: {{ purchaseOrder.id }}</h2>
+    </span>
+    <span class="user-id-text">
+      <h2>User ID: {{ purchaseOrder.userId }}</h2>
+    </span>
+    <span class="status-text">
+      <h2>Status: {{ purchaseOrder.status }}</h2>
+    </span>
+    <br />
+    <span class="price-text">
+      <p>Total Amount: ${{ purchaseOrder.total }} COP</p>
+    </span>
+    <span class="purchase-date-text">
+      <p>Purchase Date: {{ purchaseOrder.purchaseDate }}</p>
+    </span>
+    <span class="number-of-passengers-text">
+      <p>Number of passengers: {{ purchaseOrder.numberOfPassengers }}</p>
+    </span>
+    <button
+      ngClass="cancel-button"
+      mat-raised-button
+      color="primary"
+      (click)="cancelOrder()"
+    >
+      <mat-icon>cancel</mat-icon>
+      Cancel order
+    </button>
+    <hr />
+  </div>
+</div>

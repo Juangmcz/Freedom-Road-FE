@@ -10,6 +10,8 @@ import { OurTeamComponent } from './pages/our-team/our-team.component';
 import { AuthenticationComponent } from './pages/authentication/authentication.component';
 import { LoginComponent } from './components/forms/login/login.component';
 import { RegisterComponent } from './components/forms/register/register.component';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { AccountComponent } from './pages/account/account.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -35,6 +37,16 @@ const routes: Routes = [
   {
     path: 'shopping-cart',
     component: ShoppingCartComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login'])),
+  },
+  {
+    path: 'orders',
+    component: OrdersComponent,
+    ...canActivate(() => redirectUnauthorizedTo(['/login'])),
+  },
+  {
+    path: 'account',
+    component: AccountComponent,
     ...canActivate(() => redirectUnauthorizedTo(['/login'])),
   },
   {

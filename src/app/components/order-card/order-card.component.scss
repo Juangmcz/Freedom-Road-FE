@@ -1,0 +1,46 @@
+.order-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  &:hover {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    scale: 1.05;
+  }
+}
+
+.order-card-description {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  margin: 50px 0;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #9e9e9e;
+  margin: 1px;
+}
+
+p {
+  font-size: 14px;
+  font-weight: 500;
+  color: #9e9e9e;
+  margin: 3px;
+}
+.cancel-button{
+  margin-top: 10px;
+  border-radius: 10px;
+}

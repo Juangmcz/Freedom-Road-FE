@@ -26,6 +26,9 @@ import { TicketsPageComponent } from './pages/tickets-page/tickets-page.componen
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { OurTeamComponent } from './pages/our-team/our-team.component';
 import { AuthenticationComponent } from './pages/authentication/authentication.component';
+import { OrdersComponent } from './pages/orders/orders.component';
+import { AccountComponent } from './pages/account/account.component';
+import { OrderCardComponent } from './components/order-card/order-card.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +49,9 @@ import { AuthenticationComponent } from './pages/authentication/authentication.c
     CarouselComponent,
     OurTeamComponent,
     AuthenticationComponent,
+    OrdersComponent,
+    AccountComponent,
+    OrderCardComponent,
   ],
   imports: [
     BrowserModule,

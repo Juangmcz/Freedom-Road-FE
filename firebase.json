@@ -1,1 +1,12 @@
-{}
+{
+  "hosting": {
+    "public": "dist/freedom-road-app",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
